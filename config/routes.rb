@@ -1,7 +1,5 @@
 Whisperme::Application.routes.draw do
-  get "messages/new"
-
-  get "messages/show"
+  resources :messages
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

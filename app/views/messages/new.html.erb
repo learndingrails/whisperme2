@@ -1,2 +1,18 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<h1>some header goes here</h1>
+<% if @message.errors.any? %>
+  <div>
+    <h2><%= pluralize(@message.errors.count, "error") %></h2>
+    <p> there were problemos with the following...</p>
+    <ul>
+    <% @message.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@message) do |f| %>
+<%= f.label :msg %> <br />
+<%= f.text_area :msg %>
+<%= f.submit "Submit" %>
+<% end %>
