@@ -27,6 +27,17 @@ describe MessagesController do
 				  post :create, :message => @attr
 			  end.should_not change(Message, :count)
 		  end
+		  
+		  it "when message is missing, should cause a relevant error to be displayed" do
+		    post :create, :message => @attr
+		    response.should_include "blank"
+	    end
+	    
+	    it "when message is too long, should cause a relevant error to be displayed" do
+        long_message = "a"*2501
+        post :create, :message => {:msg => long_message}
+  		  response.should_include "long"
+      end
 	  end
 	  
 	  describe "success" do

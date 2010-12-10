@@ -13,5 +13,5 @@ class Message < ActiveRecord::Base
    attr_accessible :msg
 
    validates :msg, :presence => true,
-                   :length => { :maximum => 2500}
+                   :length => { :maximum => 25}
 end
