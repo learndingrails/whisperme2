@@ -1,5 +1,9 @@
 require 'spec_helper'
-
+  
 describe "messages/new.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should render the form" do
+    render '/messages/new.html.erb'
+    reponse.should have_form_putting_to(@message) 
+    with_submit_button
+  end
 end

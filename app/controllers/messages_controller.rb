@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
 		  redirect_to new_message_path
 	  else
 	    flash[:success] = "fail."
-		  redirect_to new_message_path
+		  render new_message_path
 	  end
   end
 

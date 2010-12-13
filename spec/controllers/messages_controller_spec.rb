@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe MessagesController do
-
+  render_views
+  
   describe "GET 'new'" do
     it "should be successful" do
       get 'new'
@@ -28,15 +29,15 @@ describe MessagesController do
 			  end.should_not change(Message, :count)
 		  end
 		  
-		  it "when message is missing, should cause a relevant error to be displayed" do
-		    post :create, :message => @attr
-		    response.should_include "blank"
-	    end
+      it "when message is missing, should cause a relevant error to be displayed" do
+         post :create, :message => @attr
+         response.should have_selector("div",:id => "error_explanation")
+      end
 	    
 	    it "when message is too long, should cause a relevant error to be displayed" do
-        long_message = "a"*2501
+        long_message = "a"*26
         post :create, :message => {:msg => long_message}
-  		  response.should_include "long"
+        response.should have_selector("div",:id => "error_explanation")
       end
 	  end
 	  
@@ -54,7 +55,7 @@ describe MessagesController do
       it "should redirect to the new message page" do
         post :create, :message => @attr
         response.should redirect_to(new_message_path)
-      end  
+      end
     end
   end
 end
