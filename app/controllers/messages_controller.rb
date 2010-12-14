@@ -13,9 +13,8 @@ class MessagesController < ApplicationController
 		  flash[:success] = "Message Posted."
 		  redirect_to new_message_path
 	  else
-	    flash[:success] = "fail."
+	    flash[:failure] = "Unable to Post Message."
 		  render new_message_path
 	  end
   end
-
 end
