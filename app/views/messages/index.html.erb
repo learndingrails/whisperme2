@@ -1,0 +1,8 @@
+<h1>Index of Messages!</h1>
+
+<table class="message_list_table">
+	<% for m in @messages %>
+		<tr class="message_date"><p><%= m.created_at %></p></tr>
+		<tr class="message_contents"><p><%= m.msg %></p></tr>
+	<% end %>
+</table>
