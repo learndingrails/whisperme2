@@ -1,8 +1,8 @@
-<h1>some header goes here</h1>
+<h1>_____'s Profile'</h1>
 <% if @message.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@message.errors.count, "error") %></h2>
-    <p> there were problemos with the following...</p>
+    <p>We were unable to deliver your message.</p>
     <ul>
     <% @message.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
