@@ -16,12 +16,6 @@ describe MessagesController do
       response.should be_success
     end
   end
-  
-  describe "learning test" do
-    it "will be useful" do
-      5.should eql(6)
-    end
-  end
 
 #  describe "GET 'show'" do
 #    it "should be successful" do
