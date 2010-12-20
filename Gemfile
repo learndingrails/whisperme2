@@ -31,6 +31,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'flutie', "1.0.3"
+gem 'devise', '1.1.rc0'
 
 group :test do
 	gem 'webrat'

@@ -15,9 +15,11 @@ describe MessagesController do
       get 'index'
       response.should be_success
     end
-    
-    it "should show all Messages in database" do
-      get 'index'
+  end
+  
+  describe "learning test" do
+    it "will be useful" do
+      5.should eql(6)
     end
   end
 
@@ -70,4 +72,3 @@ describe MessagesController do
     end
   end
 end
-
