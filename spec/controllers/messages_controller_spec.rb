@@ -16,8 +16,13 @@ describe MessagesController do
       response.should be_success
     end
     
-    it "should show all Messages in database" do
+    it "should have all Messages in database" do
       get 'index'
+      assigns(:messages).should eql(Message.all)
+      #to figure out: 
+      # (1) How should I be preloading the messages list?
+      # (2) why is it not initially empty?
+      # (3) how produce a fail case, so we know this test actually checks something?
     end
   end
 
